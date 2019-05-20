@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,8 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Calendar calendar=Calendar.getInstance();
-        String currentDate= DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
-
+        //String currentDate= DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        SimpleDateFormat df= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentDate = df.format(calendar.getTime());
         TextView textviewDate= findViewById(R.id.text_view_date);
         textviewDate.setText(currentDate);
     }
